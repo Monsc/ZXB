@@ -18,22 +18,21 @@ import { cn } from '../../lib/utils';
 import MobileNav from '../MobileNav';
 import { useTranslation } from 'react-i18next';
 
-const { t } = useTranslation();
-
-const navItems = [
-  { icon: Home, label: t('home'), path: '/' },
-  { icon: Search, label: t('explore'), path: '/explore' },
-  { icon: Bell, label: t('notifications'), path: '/notifications' },
-  { icon: Mail, label: t('messages'), path: '/messages' },
-  { icon: Bookmark, label: t('bookmarks'), path: '/bookmarks' },
-  { icon: User, label: t('profile'), path: '/profile' },
-  { icon: Settings, label: t('settings'), path: '/settings' },
-];
-
 export default function MainLayout({ children }) {
   const { user, logout } = useAuth();
   const location = useLocation();
+  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navItems = [
+    { icon: Home, label: t('home'), path: '/' },
+    { icon: Search, label: t('explore'), path: '/explore' },
+    { icon: Bell, label: t('notifications'), path: '/notifications' },
+    { icon: Mail, label: t('messages'), path: '/messages' },
+    { icon: Bookmark, label: t('bookmarks'), path: '/bookmarks' },
+    { icon: User, label: t('profile'), path: '/profile' },
+    { icon: Settings, label: t('settings'), path: '/settings' },
+  ];
 
   const handleLogout = async () => {
     try {
