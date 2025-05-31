@@ -11,6 +11,7 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
 import LoadingSpinner from './components/LoadingSpinner';
+import HomePage from './pages/HomePage';
 
 // 懒加载管理页面组件等可按需补充
 
@@ -32,7 +33,7 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode="wait" initial={false}>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Navigate to="/feed" replace />} />
+        <Route path="/" element={<AnimatedPage><MainLayout><HomePage /></MainLayout></AnimatedPage>} />
         <Route path="/feed" element={<AnimatedPage><MainLayout><Feed /></MainLayout></AnimatedPage>} />
         <Route path="/explore" element={<AnimatedPage><MainLayout><Feed /></MainLayout></AnimatedPage>} />
         <Route path="/notifications" element={<AnimatedPage><MainLayout><Notifications /></MainLayout></AnimatedPage>} />
