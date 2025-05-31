@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { useToast } from '../contexts/ToastContext';
+import { useToast } from '../hooks/useToast';
 import { Button } from '../components/Button';
 import { useTranslation } from 'react-i18next';
 

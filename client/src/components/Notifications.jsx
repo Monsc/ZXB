@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { useToast } from '../contexts/ToastContext';
+import { useToast } from '../hooks/useToast';
 import apiService from '../services/api';
 import { Loader2, Bell, Heart, MessageSquare, UserPlus, Share2 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';

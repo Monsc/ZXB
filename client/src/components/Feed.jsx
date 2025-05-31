@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { apiService } from '../services/api';
-import { useToast } from '../contexts/ToastContext';
+import { useToast } from '../hooks/useToast';
 import { PostCard } from './PostCard';
 import { useAuth } from '../contexts/AuthContext';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';

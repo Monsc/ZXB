@@ -1,5 +1,5 @@
 import React from 'react';
-import { useToast } from '../../contexts/ToastContext';
+import { useToast } from '../../hooks/useToast';
 import { CheckCircle, XCircle, Info, X } from 'lucide-react';
 
 export const Toaster = () => {

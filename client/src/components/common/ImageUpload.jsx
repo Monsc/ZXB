@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FileUpload from './FileUpload';
 import ImagePreview from './ImagePreview';
-import { useToast } from '@/contexts/ToastContext';
+import { useToast } from '../../hooks/useToast';
 
 const ImageUpload = ({
   value,
