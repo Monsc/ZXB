@@ -8,7 +8,7 @@
     "dev:backend": "cd server && pnpm dev",
     "dev:frontend": "cd client && pnpm dev",
     "install:all": "pnpm install && cd server && pnpm install && cd ../client && pnpm install",
-    "build": "cd server && pnpm build && cd ../client && pnpm build",
+    "build": "vite build",
     "test": "cd server && pnpm test && cd ../client && pnpm test",
     "lint": "cd server && pnpm lint && cd ../client && pnpm lint",
     "format": "cd server && pnpm format && cd ../client && pnpm format",
