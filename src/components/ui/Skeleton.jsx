@@ -1,13 +1,25 @@
-import React from 'react';
+import * as React from 'react';
+import { cn } from '@/lib/utils';
 
-export default function Skeleton({ type = 'rect', width = '100%', height = 16, className = '' }) {
-  const base = 'animate-pulse bg-primary-light';
-  const style = { width, height };
-  if (type === 'circle') {
-    return <div className={`${base} rounded-full ${className}`} style={{ ...style, aspectRatio: '1/1' }} />;
+export const Skeleton = React.forwardRef(
+  ({ className, variant = 'rect', ...props }, ref) => {
+    const base = 'animate-pulse bg-[#1da1f2]/10 dark:bg-[#1a8cd8]/10';
+    const variants = {
+      rect: 'rounded-2xl',
+      card: 'rounded-2xl',
+      text: 'rounded-full h-4',
+      avatar: 'rounded-full',
+      button: 'rounded-full h-10',
+    };
+    return (
+      <div
+        ref={ref}
+        className={cn(base, variants[variant], className)}
+        {...props}
+      />
+    );
   }
-  if (type === 'text') {
-    return <div className={`${base} rounded ${className}`} style={{ ...style, height: 12 }} />;
-  }
-  return <div className={`${base} rounded-xl ${className}`} style={style} />;
-} 
+);
+Skeleton.displayName = 'Skeleton';
+
+export default Skeleton; 
