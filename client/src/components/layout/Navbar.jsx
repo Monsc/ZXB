@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { SearchIcon, BellIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon, BellIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 import CreatePostButton from '../CreatePostButton';
 import { useTranslation } from 'react-i18next';
 
@@ -97,7 +97,7 @@ const Navbar = () => {
                 placeholder={t('search_placeholder')}
                 className="w-full px-4 py-2 pl-10 text-sm border border-[#1da1f2]/30 rounded-full focus:outline-none focus:ring-2 focus:ring-[#1da1f2] focus:border-transparent bg-white dark:bg-gray-900 text-[#1da1f2] placeholder:text-[#1da1f2]/60"
               />
-              <SearchIcon className="absolute left-3 top-2.5 h-5 w-5 text-[#1da1f2]/60" />
+              <MagnifyingGlassIcon className="absolute left-3 top-2.5 h-5 w-5 text-[#1da1f2]/60" />
             </div>
           </form>
 
