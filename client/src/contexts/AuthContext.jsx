@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import apiService from '@/services/api';
 import { toast } from 'react-hot-toast';
@@ -7,8 +7,13 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
+  const navigateRef = useRef(null);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    navigateRef.current = navigate;
+  }, [navigate]);
 
   useEffect(() => {
     try {
@@ -51,7 +56,7 @@ export const AuthProvider = ({ children }) => {
       const { accessToken, user } = response.data;
       localStorage.setItem('token', accessToken);
       setUser(user);
-      navigate('/feed', { replace: true });
+      navigateRef.current?.('/feed', { replace: true });
       return user;
     } catch (error) {
       throw new Error(error.response?.data?.message || '登录失败');
