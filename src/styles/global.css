@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #181A1B;
+  --color-primary-light: #23272F;
+  --color-primary-dark: #101214;
+  --color-accent-blue: #3B82F6;
+  --color-accent-purple: #8B5CF6;
+  --color-accent-red: #EF4444;
+  --color-muted: #A0A4AB;
+  --color-card: #23272F;
+  --color-border: #2D333B;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  --max-width-main: 600px;
+}
+
+body {
+  @apply bg-primary text-white;
+}
+
+.card {
+  @apply bg-card rounded-2xl border border-border p-4 shadow-sm;
+}
+
+.btn-primary {
+  @apply bg-accent-blue text-white rounded-full px-5 py-2 font-semibold hover:bg-accent-purple transition-colors;
+}
+
+.btn-danger {
+  @apply bg-accent-red text-white rounded-full px-5 py-2 font-semibold hover:bg-accent-purple transition-colors;
+}
+
+.input {
+  @apply bg-card border border-border rounded-full px-4 py-2 text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent-blue transition;
+} 

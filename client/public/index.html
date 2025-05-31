@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1da1f2" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1da1f2" />
+    <meta name="description" content="走线吧 ZouXianBa - 现代化开源社交平台" />
+    <meta name="keywords" content="走线吧,走线，社交,推特,社区,内容,实时,互动,AI,现代化" />
+    <meta name="author" content="走线吧" />
+    <meta property="og:title" content="走线吧 ZouXianBa - 现代化社交平台" />
+    <meta property="og:description" content="现代化开源社交平台，支持高并发与高可用的全栈社交体验。" />
+    <meta property="og:image" content="/logo512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/logo192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/logo512.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>走线吧 ZouXianBa</title>
+    <style>
+      body.loading-splash {
+        background: #1da1f2;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+      .splash-logo {
+        width: 96px;
+        height: 96px;
+        border-radius: 24px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body class="loading-splash">
+    <div id="splash">
+      <div class="splash-logo">
+        <img src="/logo192.png" alt="ZouXianBa" style="width: 72px; height: 72px;" />
+      </div>
+    </div>
+    <div id="root" style="display:none;"></div>
+    <script type="module">
+      // 启动后隐藏 splash，显示主应用
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          document.getElementById('splash').style.display = 'none';
+          document.getElementById('root').style.display = '';
+          document.body.classList.remove('loading-splash');
+        }, 600);
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html> 
