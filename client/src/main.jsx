@@ -1,32 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { ToastProvider } from './contexts/ToastContext';
-import ThemeProvider from './contexts/ThemeContext';
-import ErrorBoundary from './components/common/ErrorBoundary';
-import { BrowserRouter } from 'react-router-dom';
 import { NotificationProvider } from './contexts/NotificationContext';
+import ThemeProvider from './contexts/ThemeContext';
+import './index.css';
 
-console.log('API_BASE_URL from main:', import.meta.env.VITE_API_BASE);
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider>
-        <ErrorBoundary>
-          <AuthProvider>
-            <ToastProvider>
-              <NotificationProvider>
-                <App />
-              </NotificationProvider>
-            </ToastProvider>
-          </AuthProvider>
-        </ErrorBoundary>
+        <AuthProvider>
+          <ToastProvider>
+            <NotificationProvider>
+              <App />
+            </NotificationProvider>
+          </ToastProvider>
+        </AuthProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
-);
+); 

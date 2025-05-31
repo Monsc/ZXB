@@ -14,15 +14,8 @@ import { Bell, AtSign, Info, UserPlus, Heart, MessageCircle, Trash2, Check } fro
 import { useTranslation } from 'react-i18next';
 import Skeleton from '@/components/ui/skeleton';
 
-const { t } = useTranslation();
-
-const tabTypes = [
-  { value: 'all', label: t('all'), icon: Bell },
-  { value: 'mention', label: t('mention'), icon: AtSign },
-  { value: 'system', label: t('system'), icon: Info },
-];
-
 const NotificationsPage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { user } = useAuth();
   const [notifications, setNotifications] = useState([]);
@@ -30,6 +23,12 @@ const NotificationsPage = () => {
   const [error, setError] = useState(null);
   const [unreadCount, setUnreadCount] = useState(0);
   const [activeTab, setActiveTab] = useState('all');
+
+  const tabTypes = [
+    { value: 'all', label: t('all'), icon: Bell },
+    { value: 'mention', label: t('mention'), icon: AtSign },
+    { value: 'system', label: t('system'), icon: Info },
+  ];
 
   // 获取通知列表
   const fetchNotifications = async () => {
